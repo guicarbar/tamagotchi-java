@@ -6,6 +6,7 @@ import Tamagotchi.Resorces.TextResources;
 
 // imports modules
 import Tamagotchi.Modules.Status;
+import Tamagotchi.Modules.Sleep;
 
 
 // main function
@@ -24,6 +25,12 @@ public class Main {
         Status.setSleep(100);
         Status.setWallet(100);
 
+        Sleep.removeSleep(100);
+
+        // reduzir os status meno a carteira
+        // Status.reduxStatsPerAction(90,60,20);
+
+        Status.showStatus();
 
         // encerra o scanner
         sc.close();
