@@ -12,5 +12,11 @@ public class Wallet extends Status {
     }
 
     // verifica wallet
-    public static boolean haveMoney()
+    public static boolean haveMoney(double value) {
+      if (getWallet() < value) {
+          return false;
+      } else {
+          return true;
+      }
+    };
 }
