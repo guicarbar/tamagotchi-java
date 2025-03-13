@@ -25,7 +25,7 @@ public class Status {
 
     // functiosns of status
     // Conversor de humor
-    public static String convertHumor() {
+    public static String convertHumor(String name) {
         if (getHumor() > 80) {
             return "Humor: Muito feliz!";
         } else if (getHumor() > 50 && getHumor() <= 80) {
@@ -35,7 +35,7 @@ public class Status {
         } else if (getHumor() > 0 && getHumor() <= 20) {
             return "Humor: Muito triste!";
         } else if (getHumor() < 0) {
-            return "... morreu de tristeza!";
+            return name + " morreu de tristeza!";
         } else {
             return "Tem algum erro no humor";
         }
@@ -43,7 +43,7 @@ public class Status {
 
 
     // Conversor de fome
-    public static String convertHunger() {
+    public static String convertHunger(String name) {
         if (getHunger() > 80) {
             return "Fome: Muito satisfeito!";
         } else if (getHunger() > 50 && getHunger() <= 80) {
@@ -53,7 +53,7 @@ public class Status {
         } else if (getHunger() > 0 && getHunger() <= 20) {
             return "Fome: Faminto!";
         } else if (getHunger() < 0) {
-            return "... morreu de fome!";
+            return name + " morreu de fome!";
         } else {
             return "Tem algo de errado na fome";
         }
@@ -61,7 +61,7 @@ public class Status {
 
 
     // Conversor de sono
-    public static String convertSleep() {
+    public static String convertSleep(String name) {
         if (getSleep() > 80) {
             return "Sono: Muito disposto!";
         } else if (getSleep() > 50 && getSleep() <= 80) {
@@ -71,7 +71,7 @@ public class Status {
         } else if (getSleep() > 0 && getSleep() <= 20) {
             return "Sono: Exausto!";
         } else if (getSleep() <= 0) {
-            return "... morreu de sono!";
+            return name + " morreu de sono!";
         } else {
             return "Tem algo de errado no sono";
         }
@@ -84,8 +84,8 @@ public class Status {
     }
 
     // show status
-    public static void showStatus() {
-        System.out.println("... se encontra:\n\n" + convertHumor() + "\n" + convertHunger() + "\n" + convertSleep() + "\n" + showCashWallet() + "\n");
+    public static void showStatus(String name) {
+        System.out.println(name +  " se encontra:\n\n" + convertHumor(name) + "\n" + convertHunger(name) + "\n" + convertSleep(name) + "\n" + showCashWallet() + "\n");
     }
 
     // decrees stats per action

@@ -17,12 +17,12 @@ public class Hunger extends Status {
         hunger -= hungerPoints;
     }
 
-    public static void analyserHunger() {
+    public static void analyserHunger(String name) {
         if (hunger > 100) {
             hunger = 100;
-            System.out.println("\n ... náo precisa mais comer!\n");
+            System.out.println("\n " + name + " náo precisa mais comer!\n");
         } else if (hunger <= 0) {
-            System.out.println(".. morreude fome!");
+            System.out.println(name + " morreude fome!");
         }
     }
 

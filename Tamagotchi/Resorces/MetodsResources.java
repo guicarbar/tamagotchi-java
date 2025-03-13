@@ -1,6 +1,7 @@
 package Tamagotchi.Resorces;
 
 public class MetodsResources {
+    // teste para converter para numeros
     public static int isConvertibleToInt(String str) {
         if (str == null || str.isEmpty()) {
             return 1;
