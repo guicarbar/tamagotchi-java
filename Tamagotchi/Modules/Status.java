@@ -41,6 +41,7 @@ public class Status {
         }
     }
 
+
     // Conversor de fome
     public static String convertHunger() {
         if (getHunger() > 80) {
@@ -57,6 +58,7 @@ public class Status {
             return "Tem algo de errado na fome";
         }
     }
+
 
     // Conversor de sono
     public static String convertSleep() {
@@ -80,7 +82,6 @@ public class Status {
     public static String showCashWallet() {
         return "Carteira: R$" + getWallet();
     }
-
 
     // show status
     public static void showStatus() {
