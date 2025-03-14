@@ -89,6 +89,7 @@ public class Hunger extends Status {
         System.out.println(TextResources.quests[1]);
         String optionFood1 = sc.nextLine();
 
+        // verificador
         if (MetodsResources.isConvertibleToInt(optionFood1) == 1) {
             System.out.println("É necessario escolher uma opção");
         } else if (MetodsResources.isConvertibleToInt(optionFood1) == 2) {

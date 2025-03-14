@@ -1,14 +1,17 @@
 package Tamagotchi.Modules;
 
 public class Sleep extends Status {
+    // add poins of sleep
     public static void addSleep(int sleepPoints) {
         sleep += sleepPoints;
     }
 
+    // remove poins sleep
     public static void removeSleep(int sleepPoints) {
         sleep -= sleepPoints;
     }
-    
+
+    // analyser sleep points
     public static void analyserSleep(String name) {
         if (sleep > 100) {
             sleep = 100;

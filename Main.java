@@ -16,6 +16,7 @@ public class Main {
         // abre o scanner
         Scanner sc = new Scanner(System.in);
 
+        // nomeando tamagotchi
         CatchName.catchName();
 
         // start menu
@@ -28,11 +29,10 @@ public class Main {
         Status.setSleep(100);
         Status.setWallet(100);
 
-        Sleep.removeSleep(100);
-
         // reduzir os status meno a carteira
         // Status.reduxStatsPerAction(90,60,20);
 
+        // show stats - passa op name do tamagotchi
         Status.showStatus(CatchName.getName());
 
         // encerra o scanner
