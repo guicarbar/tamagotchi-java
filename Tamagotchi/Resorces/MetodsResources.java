@@ -18,8 +18,22 @@ public class MetodsResources {
         }
     }
 
+    // ramndomizar sorte inicial
     public static int ramndomNumberForLuck() {
+        // start random
         Random random = new Random();
+
+        // var for luck and return
+        int luck = random.nextInt(3);
+        return luck;
+    }
+
+    // alterar a sorte
+    public static int alterLuck() {
+        // start random
+        Random random = new Random();
+
+        // var for luck and return
         int luck = random.nextInt(3);
         return luck;
     }

@@ -2,13 +2,14 @@ package Tamagotchi.Modules;
 
 public class Wallet extends Status {
     // add money
-    public static void addCash(int cash) {
+    public static void addCash(double cash) {
         wallet += cash;
     }
 
     // remove money
-    public static void removeCash(int cash) {
+    public static void removeCash(double cash) {
         wallet -= cash;
+        System.out.println("Foi retirado da sua carteira: RS" + cash);
     }
 
     // verifica wallet

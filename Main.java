@@ -7,7 +7,7 @@ import Tamagotchi.Resorces.CatchName;
 
 // imports modules
 import Tamagotchi.Modules.Status;
-import Tamagotchi.Modules.Sleep;
+import Tamagotchi.Modules.Games;
 
 
 // main function
@@ -28,6 +28,9 @@ public class Main {
         Status.setHunger(100);
         Status.setSleep(100);
         Status.setWallet(100);
+
+        // iniciar o game
+        Games.selectGame();
 
         // reduzir os status meno a carteira
         // Status.reduxStatsPerAction(90,60,20);

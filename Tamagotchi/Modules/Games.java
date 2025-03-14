@@ -3,13 +3,14 @@ package Tamagotchi.Modules;
 // import resorces
 import Tamagotchi.Resorces.MetodsResources;
 import Tamagotchi.Resorces.TextResources;
+import Tamagotchi.Modules.Wallet;
 
 // import biblioteca
 import java.util.Scanner;
 
 public class Games {
     // luck of tamagotchi
-    int luck = MetodsResources.ramndomNumberForLuck();
+    static int luck = MetodsResources.ramndomNumberForLuck();
 
     // switch game selected
     public static void switchGame(int game) {
@@ -22,6 +23,11 @@ public class Games {
                 break;
             case 3:
                 // ursinho
+                break;
+            case 4:
+                luck = MetodsResources.alterLuck();
+                Wallet.removeCash(1.00);
+                System.out.println("Vocé jogou uma moeda no poço, a sorte de seu Tamagotchi muda!");
                 break;
             default:
                 System.out.println("Digite apenas uma das opções disponiveis!");
@@ -47,7 +53,7 @@ public class Games {
             int selectedGame = Integer.parseInt(gameSelected);
 
             // verifica se o player nn quer voltar
-            if (selectedGame == 4) {
+            if (selectedGame == 5) {
                 // voltar pro menu
             } else {
                 // switch do game
