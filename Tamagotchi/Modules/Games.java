@@ -23,7 +23,7 @@ public class Games {
                 HappyGames.computador();
                 break;
             case 3:
-                Ursinho.
+                Ursinho.ursinhoGame();
                 break;
             case 4:
                 luck = MetodsResources.alterLuck();

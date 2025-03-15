@@ -31,52 +31,37 @@ public class Hunger extends Status {
         // string do pobre
         String poorGuy = "Vocé não tem dinheiro o suficiete! vá trabalhar!";
 
+        // set value
+        double price = 0.0;
+
         // switch da escolha
         switch (optionSelected) {
             case 1:
-                if (!Wallet.haveMoney(12.00)) {
-                    // comer comida
-                } else {
-                    System.out.println(poorGuy);
-                }
+                price = 12.00;
                 break;
             case 2:
-                if (!Wallet.haveMoney(8.00)) {
-                    // comer comida
-                } else {
-                    System.out.println(poorGuy);
-                }
+                price = 8.00;
                 break;
             case 3:
-                if (!Wallet.haveMoney(15.00)) {
-                    // comer comida
-                } else {
-                    System.out.println(poorGuy);
-                }
+                price = 15.00;
                 break;
             case 4:
-                if (!Wallet.haveMoney(25.00)) {
-                    // comer comida
-                } else {
-                    System.out.println(poorGuy);
-                }
+                price = 25.00;
                 break;
             case 5:
-                if (!Wallet.haveMoney(5.00)) {
-                    // comer comida
-                } else {
-                    System.out.println(poorGuy);
-                }
+                price = 5.00;
                 break;
             case 6:
-                if (!Wallet.haveMoney(7.00)) {
-                    // comer comida
-                } else {
-                    System.out.println(poorGuy);
-                }
+                price = 7.00;
                 break;
             default:
                 System.out.println("Digite apenas uma das opções disponiveis!");
+        }
+
+        if (!Wallet.haveMoney(price)) {
+            // comer comida
+        } else {
+            System.out.println(poorGuy);
         }
     };
 
