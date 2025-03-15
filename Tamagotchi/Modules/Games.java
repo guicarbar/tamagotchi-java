@@ -3,7 +3,8 @@ package Tamagotchi.Modules;
 // import resorces
 import Tamagotchi.Resorces.MetodsResources;
 import Tamagotchi.Resorces.TextResources;
-import Tamagotchi.Modules.Wallet;
+import Tamagotchi.Modules.HappyGames;
+import Tamagotchi.Modules.Ursinho;
 
 // import biblioteca
 import java.util.Scanner;
@@ -16,13 +17,13 @@ public class Games {
     public static void switchGame(int game) {
         switch (game) {
             case 1:
-                // console
+                HappyGames.console();
                 break;
             case 2:
-                // computador
+                HappyGames.computador();
                 break;
             case 3:
-                // ursinho
+                Ursinho.
                 break;
             case 4:
                 luck = MetodsResources.alterLuck();

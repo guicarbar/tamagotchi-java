@@ -1,6 +1,9 @@
 // packaged - modules
 package Tamagotchi.Modules;
 
+// import resources
+import Tamagotchi.Resorces.CatchName;
+
 public class Status {
     // declarando os niveis do tamagotchi
     protected static int humor;
@@ -88,11 +91,13 @@ public class Status {
         System.out.println(name +  " se encontra:\n\n" + convertHumor(name) + "\n" + convertHunger(name) + "\n" + convertSleep(name) + "\n" + showCashWallet() + "\n");
     }
 
-    // decrees stats per action
-    public static void reduxStatsPerAction(int humor, int hunger, int sleep) {
-        Status.humor -= humor;
-        Status.hunger -= hunger;
-        Status.sleep -= sleep;
-    }
+    // redux points
+    public static void modGameAllPoints(int incHumor, int redxHunger, int redxSleep) {
+        humor += incHumor;
+        hunger -= redxHunger;
+        sleep -= redxSleep;
 
+        // show status after redux by game
+        showStatus(CatchName.getName());
+    }
 }
