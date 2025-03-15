@@ -3,15 +3,14 @@ package Tamagotchi.Modules;
 // import resorces
 import Tamagotchi.Resorces.MetodsResources;
 import Tamagotchi.Resorces.TextResources;
-import Tamagotchi.Modules.HappyGames;
-import Tamagotchi.Modules.Ursinho;
+
 
 // import biblioteca
 import java.util.Scanner;
 
 public class Games {
     // luck of tamagotchi
-    static int luck = MetodsResources.ramndomNumberForLuck();
+    static int luck;
 
     // switch game selected
     public static void switchGame(int game) {

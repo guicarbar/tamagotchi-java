@@ -25,13 +25,13 @@ public class MetodsResources {
     }
 
     // ramndomizar sorte inicial
-    public static int ramndomNumberForLuck() {
+    public static int ramndomNumberForLuck(int number) {
         // start random
         Random random = new Random();
 
         // var for luck and return
-        int luck = random.nextInt(3);
-        return luck;
+        int numberReturn = random.nextInt(number);
+        return numberReturn;
     }
 
     // alterar a sorte

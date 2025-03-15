@@ -28,9 +28,6 @@ public class Hunger extends Status {
 
     // switch da comida
     public static void switchFood(int optionSelected) {
-        // string do pobre
-        String poorGuy = "Vocé não tem dinheiro o suficiete! vá trabalhar!";
-
         // set value
         double price = 0.0;
 
@@ -61,7 +58,7 @@ public class Hunger extends Status {
         if (!Wallet.haveMoney(price)) {
             // comer comida
         } else {
-            System.out.println(poorGuy);
+            System.out.println("Vocé não tem dinheiro o suficiete! vá trabalhar!");
         }
     };
 

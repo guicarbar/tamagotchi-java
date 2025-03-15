@@ -8,6 +8,48 @@ import Tamagotchi.Modules.Wallet;
 import java.util.Scanner;
 
 public class Ursinho extends Games {
+    // compar by luck
+    // azar
+    public static void azar(int sorterNumber) {
+        if (0 <= sorterNumber && sorterNumber < 8 ) {
+            // perde
+        } else {
+            // ganha
+        }
+    }
+
+    // neutro
+    public static void neutro(int sorterNumber) {
+        if (0 <= sorterNumber && sorterNumber <= 5 ) {
+            // perde
+        } else {
+            // ganha
+        }
+    }
+
+    // sorte
+    public static void sorte(int sorterNumber) {
+        if (0 <= sorterNumber && sorterNumber < 4 ) {
+            // perde
+        } else {
+            // ganha
+        }
+    }
+
+
+    // in game tigriinho
+    public static void inGame(int sorterNumber) {
+        if (luck == 0) {
+            // azar
+            azar(sorterNumber);
+        } else if (luck == 1) {
+            // neutro
+        } else {
+            // sorte
+        }
+    }
+
+
     // switch bet
     public static void switchBet(int bet) {
         // set value
@@ -32,7 +74,11 @@ public class Ursinho extends Games {
         }
 
         if (!Wallet.haveMoney(valueBet)) {
-            // comer comida
+            // remove o dinheiro da carteira
+            Wallet.removeCash(valueBet);
+
+            // jogar no tigrinho
+            inGame(MetodsResources.ramndomNumberForLuck(10));
         } else {
             // esculacho por ser falido
         }
@@ -42,6 +88,9 @@ public class Ursinho extends Games {
     public static void ursinhoGame() {
         // inicializador do ursinho
         MetodsResources.timer(5, 3);
+
+        // atribuir um valor a luck toda vez q o game rodar
+        luck = MetodsResources.ramndomNumberForLuck(3); 
 
         // inicando o scanner
         Scanner sc = new Scanner(System.in);
