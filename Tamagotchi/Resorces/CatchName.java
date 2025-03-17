@@ -27,20 +27,4 @@ public class CatchName {
             System.out.println("Porfavor digite um nome!");
         }
     }
-
-    // rename function
-    public static void renamePet() {
-        // inicaiando scanner
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Qual o novo nome para seu Tamagotchi?");
-        String nome = sc.nextLine();
-
-        // teste do nome para vazio
-        if (nome.isEmpty() == true) {
-            setName(nome);
-        } else {
-            System.out.println("Porfavor digite um nome!");
-        }
-    }
 }

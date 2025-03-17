@@ -48,14 +48,10 @@ public class MetodsResources {
     public static void metodForTimer(int metod, String nome) {
         switch (metod) {
             case 1:
-                System.out.println("\nIniciando console ...\n");
-                System.out.println(nome + "Começou a jogar!\n");
-                System.out.println("\nApós 5 horas jogando no console," + nome + " fica cansado e decide parar de jogar!\n");
+                // computador
                 break;
             case 2:
-                System.out.println("\nIniciando computador ...\n");
-                System.out.println(nome + "Começou a jogar!\n");
-                System.out.println("\nApós 7 horas jogando no computador," + nome + " fica cansado e decide parar de jogar!\n");
+                // computador
                 break;
             case 3:
                 System.out.println("\nIniciando Ursinho! Vamos apostar hoje ? ...\n");

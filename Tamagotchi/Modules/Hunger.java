@@ -20,7 +20,7 @@ public class Hunger extends Status {
     public static void analyserHunger(String name) {
         if (hunger > 100) {
             hunger = 100;
-            System.out.println("\n " + name + " náo precisa mais comer!\n");
+            System.out.println(\n");
         } else if (hunger <= 0) {
             System.out.println(name + " morreude fome!");
         }

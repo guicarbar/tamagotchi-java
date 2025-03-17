@@ -38,6 +38,9 @@ public class Games {
 
     // metodo pra escolher o game pra rodar
     public static void selectGame() {
+        // setta um valor novo pra luck toda vez que for jogar algum game
+        luck = MetodsResources.ramndomNumberForLuck(3);
+
         // inicia o scanner
         Scanner sc = new Scanner(System.in);
 

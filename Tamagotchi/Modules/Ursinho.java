@@ -44,8 +44,10 @@ public class Ursinho extends Games {
             azar(sorterNumber);
         } else if (luck == 1) {
             // neutro
+            neutro(sorterNumber);
         } else {
             // sorte
+            sorte(sorterNumber);
         }
     }
 
@@ -88,9 +90,6 @@ public class Ursinho extends Games {
     public static void ursinhoGame() {
         // inicializador do ursinho
         MetodsResources.timer(5, 3);
-
-        // atribuir um valor a luck toda vez q o game rodar
-        luck = MetodsResources.ramndomNumberForLuck(3); 
 
         // inicando o scanner
         Scanner sc = new Scanner(System.in);
