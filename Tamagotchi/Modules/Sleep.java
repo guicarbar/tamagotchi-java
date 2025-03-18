@@ -21,9 +21,9 @@ public class Sleep extends Status {
     public static void analyserSleep(String name) {
         if (sleep > 100) {
             sleep = 100;
-            System.out.println("\n " + name + " náo precisa mais dormir!\n");
+            System.out.println("\n" + name + " náo precisa mais dormir!\n");
         } else if (sleep <= 0) {
-            System.out.println(name + " morreude sono!");
+            System.out.println("\n" + name + " morreude sono!\n");
         }
     }
 
@@ -40,7 +40,7 @@ public class Sleep extends Status {
                 // sono longo
                 break;
             default:
-                System.out.println("é necessario escolher uma opçao!");
+                System.out.println("\nDigite apenas uma das opções disponiveis!\n");
         }
     }
 
@@ -51,15 +51,11 @@ public class Sleep extends Status {
         Scanner sc = new Scanner(System.in);
 
         // escolha de tempo for sleep
-        System.out.println("Quanto tempo deseja dormir ?");
-        System.out.println("1. Um cochilo de 2 horas");
-        System.out.println("2. Uma noite de sono de 7 horas");
-        System.out.println("3. Um sono muito pesado de 10 horas");
-        System.out.println("4. Voltar");
+        System.out.println("\nQuanto tempo deseja dormir ?\n1. Um cochilo de 2 horas.\n2. Uma noite de sono de 7 horas.\n3. Um sono muito pesado de 10 horas.\n4. Voltar.\n");
         String optionSleep = sc.nextLine();
 
         if (MetodsResources.isConvertibleToInt(optionSleep) == 1) {
-            System.out.println("É necessario escolher uma opção");
+            System.out.println("\nÉ necessario escolher uma opção\n");
         } else if (MetodsResources.isConvertibleToInt(optionSleep) == 2) {
             //pega a escolha de comida
             int selectedSleepTime = Integer.parseInt(optionSleep);
@@ -72,9 +68,9 @@ public class Sleep extends Status {
                 switchSleep(selectedSleepTime);
             }
         } else if (MetodsResources.isConvertibleToInt(optionSleep ) == 3) {
-            System.out.println("Digite apenas numeros");
+            System.out.println("\nDigite apenas numeros\n");
         } else {
-            System.out.println("Opção invalida!");
+            System.out.println("\nOpção invalida!\n");
         }
     }
 }

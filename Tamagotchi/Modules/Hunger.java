@@ -1,9 +1,7 @@
 package Tamagotchi.Modules;
 
 // import resources
-import Tamagotchi.Resorces.TextResources;
 import Tamagotchi.Resorces.MetodsResources;
-import Tamagotchi.Modules.Wallet;
 
 // import bibbliotecas
 import java.util.Scanner;
@@ -20,9 +18,9 @@ public class Hunger extends Status {
     public static void analyserHunger(String name) {
         if (hunger > 100) {
             hunger = 100;
-            System.out.println(\n");
+            System.out.println("\n" + name + " já se sente cheio, ele não precisa comer mais por um tempo!\n");
         } else if (hunger <= 0) {
-            System.out.println(name + " morreude fome!");
+            System.out.println("\n" + name + " morreude fome!\n");
         }
     }
 
@@ -52,13 +50,13 @@ public class Hunger extends Status {
                 price = 7.00;
                 break;
             default:
-                System.out.println("Digite apenas uma das opções disponiveis!");
+                System.out.println("\nDigite apenas uma das opções disponiveis!\n");
         }
 
         if (!Wallet.haveMoney(price)) {
             // comer comida
         } else {
-            System.out.println("Vocé não tem dinheiro o suficiete! vá trabalhar!");
+            System.out.println("\nVocé não tem dinheiro o suficiete! vá trabalhar!\n");
         }
     };
 
@@ -68,12 +66,12 @@ public class Hunger extends Status {
         Scanner sc = new Scanner(System.in);
 
         // start cardapio
-        System.out.println(TextResources.quests[1]);
+        System.out.println("\nQual sua escolha para comer hoje?\n\n1. Prato feito: R$ 12,00\n2. Hambúrguer simples: R$ 8,00\n3. Hambúrguer duplo: R$ 15,00\n4. Pizza: R$ 25,00\n5. Refrigerante: R$ 5,00\n6. Chocolate: R$ 7,00\n7. Voltar\n\nDigite a opção que deseja comer!\n");
         String optionFood1 = sc.nextLine();
 
         // verificador
         if (MetodsResources.isConvertibleToInt(optionFood1) == 1) {
-            System.out.println("É necessario escolher uma opção");
+            System.out.println("\nÉ necessario escolher uma opção!\n");
         } else if (MetodsResources.isConvertibleToInt(optionFood1) == 2) {
             //pega a escolha de comida
             int optionFood2 = Integer.parseInt(optionFood1);
@@ -85,9 +83,9 @@ public class Hunger extends Status {
                 switchFood(optionFood2);
             }
         } else if (MetodsResources.isConvertibleToInt(optionFood1) == 3) {
-            System.out.println("Digite apenas numeros");
+            System.out.println("\nDigite apenas numeros!\n");
         } else {
-            System.out.println("Opção invalida!");
+            System.out.println("\nOpção invalida!\n");
         }
     }
 }

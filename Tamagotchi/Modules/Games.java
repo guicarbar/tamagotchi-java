@@ -2,7 +2,6 @@ package Tamagotchi.Modules;
 
 // import resorces
 import Tamagotchi.Resorces.MetodsResources;
-import Tamagotchi.Resorces.TextResources;
 
 
 // import biblioteca
@@ -45,7 +44,7 @@ public class Games {
         Scanner sc = new Scanner(System.in);
 
         // print da pergunta
-        System.out.println(TextResources.quests[2]);
+        System.out.println("\nQual jogo deseja jogar agora ?\n\n1. Console.\n2. Computador.\n3. Ursinho.\n4. Jogar moeda no poço.\n5. Voltar.\n\nDigite a opção que deseja jogar!\n");
         String gameSelected = sc.nextLine();
 
         // verrificador
@@ -63,7 +62,7 @@ public class Games {
                 switchGame(selectedGame);
             }
         } else if (MetodsResources.isConvertibleToInt(gameSelected) == 3) {
-            System.out.println("Digite apenas numeros");
+            System.out.println("Digite apenas numeros!");
         } else {
             System.out.println("Opção invalida!");
         }

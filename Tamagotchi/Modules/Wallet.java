@@ -9,7 +9,7 @@ public class Wallet extends Status {
     // remove money
     public static void removeCash(double cash) {
         wallet -= cash;
-        System.out.println("Foi retirado da sua carteira: RS" + cash);
+        System.out.println("\nFoi retirado da sua carteira: RS" + cash + "\n");
     }
 
     // verifica wallet

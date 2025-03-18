@@ -71,7 +71,7 @@ public class Ursinho extends Games {
                 valueBet = 20.00;
                 break;
             default:
-                System.out.println("é necesario escolher uma opçao!");
+                System.out.println("\nDigite apenas uma das opções disponiveis!\n");
                 break;
         }
 
@@ -94,11 +94,11 @@ public class Ursinho extends Games {
         // inicando o scanner
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Qunato deseja apostar hoje ?\n1. RS5,00\n2. RS10,oo\n3. 3. RS15,oo\n4. RS20,00\n5. Voltar");
+        System.out.println("\nQunato deseja apostar hoje ?\n1. RS5,00\n2. RS10,oo\n3. 3. RS15,oo\n4. RS20,00\n5. Voltar\n");
         String valueOptions = sc.nextLine();
 
         if (MetodsResources.isConvertibleToInt(valueOptions) == 1) {
-            System.out.println("É necessario escolher uma opção");
+            System.out.println("\nÉ necessario escolher uma opção\n");
         } else if (MetodsResources.isConvertibleToInt(valueOptions) == 2) {
             //pega a escolha de comida
             int valueBet = Integer.parseInt(valueOptions);
@@ -110,9 +110,9 @@ public class Ursinho extends Games {
                 switchBet(valueBet);
             }
         } else if (MetodsResources.isConvertibleToInt(valueOptions) == 3) {
-            System.out.println("Digite apenas numeros");
+            System.out.println("\nDigite apenas numeros\n");
         } else {
-            System.out.println("Opção invalida!");
+            System.out.println("\nOpção invalida!\n");
         }
     }
 }

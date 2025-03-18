@@ -6,7 +6,7 @@ public class Job extends Wallet {
     // work
     public static void Work() {
         Wallet.addCash(80.00);
-        System.out.println("Após 8 horas de trabalho su recompensa é 80 Reais!");
+        System.out.println("\nApós 8 horas de trabalho su recompensa é 80 Reais!\n");
     }
 
     // work init
@@ -14,14 +14,14 @@ public class Job extends Wallet {
         // inicia o scanner
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Quer ir trabalhar agora ? Y ou N (Yes or Not)");
+        System.out.println("\nQuer ir trabalhar agora ? Y ou N (Yes or Not)\n");
         // yes or not
         String acept = sc.nextLine();
 
         if (acept == "y" || acept == "Y" || acept == "Yes" || acept == "yes") {
             // aceitar
         } else {
-            System.out.println("Escolha apenas Y ou N");
+            System.out.println("\nEscolha apenas Y ou N\n");
         }
     }
 }
