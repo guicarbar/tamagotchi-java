@@ -1,11 +1,13 @@
 package Tamagotchi.Modules;
 
 // import resorces
+import Tamagotchi.Resorces.CatchName;
 import Tamagotchi.Resorces.MetodsResources;
 
 
 // import biblioteca
 import java.util.Scanner;
+
 
 public class Games {
     // luck of tamagotchi
@@ -15,18 +17,17 @@ public class Games {
     public static void switchGame(int game) {
         switch (game) {
             case 1:
+                // console
+                System.out.println("\nApós 7 horas jogando! " + CatchName.getName() + " se cansou e decidiu parar!\n");
                 HappyGames.console();
                 break;
             case 2:
+                // computador
+                System.out.println("\nApós 5 horas jogando! " + CatchName.getName() + " se cansou e decidiu parar!\n");
                 HappyGames.computador();
                 break;
             case 3:
                 Ursinho.ursinhoGame();
-                break;
-            case 4:
-                luck = MetodsResources.alterLuck();
-                Wallet.removeCash(1.00);
-                System.out.println("Vocé jogou uma moeda no poço, a sorte de seu Tamagotchi muda!");
                 break;
             default:
                 System.out.println("Digite apenas uma das opções disponiveis!");
@@ -44,7 +45,7 @@ public class Games {
         Scanner sc = new Scanner(System.in);
 
         // print da pergunta
-        System.out.println("\nQual jogo deseja jogar agora ?\n\n1. Console.\n2. Computador.\n3. Ursinho.\n4. Jogar moeda no poço.\n5. Voltar.\n\nDigite a opção que deseja jogar!\n");
+        System.out.println("\nQual jogo deseja jogar agora ?\n\n1. Console\n2. Computador\n3. Ursinho\n4. Voltar\n\nDigite a opção que deseja jogar!");
         String gameSelected = sc.nextLine();
 
         // verrificador
@@ -55,8 +56,9 @@ public class Games {
             int selectedGame = Integer.parseInt(gameSelected);
 
             // verifica se o player nn quer voltar
-            if (selectedGame == 5) {
+            if (selectedGame == 4) {
                 // voltar pro menu
+                System.out.println("\nVoltando para o menu principal!\n");
             } else {
                 // switch do game
                 switchGame(selectedGame);

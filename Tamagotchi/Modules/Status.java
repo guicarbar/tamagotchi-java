@@ -96,8 +96,11 @@ public class Status {
         humor += incHumor;
         hunger -= redxHunger;
         sleep -= redxSleep;
+    }
 
-        // show status after redux by game
-        showStatus(CatchName.getName());
+    public static void reduxPerAction() {
+        humor -= 5;
+        hunger -= 5;
+        sleep -= 5;
     }
 }

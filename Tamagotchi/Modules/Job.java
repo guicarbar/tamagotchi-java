@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Job extends Wallet {
     // work
-    public static void Work() {
-        Wallet.addCash(80.00);
-        System.out.println("\nApós 8 horas de trabalho su recompensa é 80 Reais!\n");
+    public static void work() {
+        Wallet.addCash(30.00);
+        System.out.println("\nApós 8 horas de trabalho sua recompensa é 30 Reais!\n");
     }
 
     // work init
@@ -18,8 +18,9 @@ public class Job extends Wallet {
         // yes or not
         String acept = sc.nextLine();
 
-        if (acept == "y" || acept == "Y" || acept == "Yes" || acept == "yes") {
+        if (acept.equalsIgnoreCase("y") || acept.equalsIgnoreCase("yes")) {
             // aceitar
+            work();
         } else {
             System.out.println("\nEscolha apenas Y ou N\n");
         }

@@ -51,7 +51,7 @@ public class Sleep extends Status {
         Scanner sc = new Scanner(System.in);
 
         // escolha de tempo for sleep
-        System.out.println("\nQuanto tempo deseja dormir ?\n1. Um cochilo de 2 horas.\n2. Uma noite de sono de 7 horas.\n3. Um sono muito pesado de 10 horas.\n4. Voltar.\n");
+        System.out.println("\nQuanto tempo deseja dormir ?\n\n1. Um cochilo de 2 horas.\n2. Uma noite de sono de 7 horas.\n3. Um sono muito pesado de 10 horas.\n4. Voltar.");
         String optionSleep = sc.nextLine();
 
         if (MetodsResources.isConvertibleToInt(optionSleep) == 1) {
@@ -63,6 +63,7 @@ public class Sleep extends Status {
             // verifica se o player nn quer voltar
             if (selectedSleepTime == 4) {
                 // voltar pro menu
+                System.out.println("\nVoltando para o menu principal!\n");
             } else {
                 // switch do game
                 switchSleep(selectedSleepTime);

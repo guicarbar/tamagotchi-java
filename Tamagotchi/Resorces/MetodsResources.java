@@ -1,7 +1,14 @@
 package Tamagotchi.Resorces;
 
-//
-import Tamagotchi.Resorces.CatchName;
+// import static resorces
+import Tamagotchi.Modules.HappyGames;
+
+import static Tamagotchi.Modules.Status.showStatus;
+import static Tamagotchi.Modules.Games.selectGame;
+import static Tamagotchi.Modules.Sleep.sleepTime;
+import static Tamagotchi.Modules.Hunger.menuSelect;
+import static Tamagotchi.Modules.Job.workInit;
+
 
 // import biblioteca
 import java.util.Random;
@@ -44,37 +51,33 @@ public class MetodsResources {
         return luck;
     }
 
-    // options for metod for timer
-    public static void metodForTimer(int metod, String nome) {
-        switch (metod) {
+
+    // switch do menu principal
+    public static void switchMenu(int menuItem) {
+        switch (menuItem) {
             case 1:
-                // computador
+                // comer
+                menuSelect();
                 break;
             case 2:
-                // computador
+                // dormir
+                sleepTime();
                 break;
             case 3:
-                System.out.println("\nIniciando Ursinho! Vamos apostar hoje ? ...\n");
-                System.out.println("Ursinho iniciado!");
+                // trabalhar
+                workInit();
+                break;
+            case 4:
+                // jogar
+                selectGame();
+                break;
+            case 5:
+                // conferir status
+                showStatus(CatchName.getName());
                 break;
             default:
-                System.out.println("\nErro\n");
+                System.out.println("\nDigite apenas uma das opções disponiveis!\n");
                 break;
         }
-    }
-
-    // metod de timer
-    public static void timer(int time, int metod) {
-        // inicia o sche com 1 poolcore
-        ScheduledExecutorService sche = Executors.newScheduledThreadPool(1);
-
-        // tarefa que ira ser executada
-        Runnable task = () -> metodForTimer(metod, CatchName.getName());
-
-        // executa o timer dps de tanto tempo
-        sche.schedule(task, time, TimeUnit.SECONDS);
-
-        // encerra o sche
-        sche.shutdown();
     }
 }

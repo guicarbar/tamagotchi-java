@@ -17,14 +17,18 @@ public class CatchName {
         // inicaindo o scanner
         Scanner sc = new Scanner(System.in);
 
+        // quest name
         System.out.println("Qual nome deseja dar para seu Tamagotchi?");
         String nome = sc.nextLine();
 
-        // teste do nome para vazio
-        if (nome.isEmpty() == true) {
-            setName(nome);
+        // verificador par o nome
+        if (MetodsResources.isConvertibleToInt(nome) == 1) {
+            System.out.println("\nÉ necessario digitar um nome!\n");
+        } else if (MetodsResources.isConvertibleToInt(nome) == 2) {
+            System.out.println("\nApenas letras podem ser usadas!\n");
         } else {
-            System.out.println("Porfavor digite um nome!");
+            CatchName.setName(nome);
+            System.out.println("\nSeu Tamagotchi recebeu o nome de " + name + "!\n");
         }
     }
 }

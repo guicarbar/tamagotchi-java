@@ -20,7 +20,7 @@ public class Main {
         boolean start = true;
 
         do {
-            System.out.println("Pressione Enter para começar a jogar");
+            System.out.println("\nPressione Enter para começar a jogar!");
             String startTest = sc.nextLine();
 
             if (MetodsResources.isConvertibleToInt(startTest) == 1) {
@@ -34,24 +34,50 @@ public class Main {
         // nomeando tamagotchi
         CatchName.catchName();
 
-        // start menu
-        System.out.println("\nDigite o número da ação desejada:\n\n1. Comer\n2. Dormir\n3. Trabalhar\n4. Jogar\n5. Conferir status\n6. Sair\n");
+        // Abrindo tamagotchi
+        System.out.println("\nTamagotchi abrindo!");
+
+        // settando vars iniciais do tamagotchi
+        Status.setHumor(60);
+        Status.setHunger(60);
+        Status.setSleep(60);
+        Status.setWallet(40);
 
 
-        // setando os status iniciais para o tomagotchi
-        Status.setHumor(100);
-        Status.setHunger(100);
-        Status.setSleep(100);
-        Status.setWallet(100);
+        // set menu area
+        boolean menuBoleans = true;
 
-        // iniciar o game
-        Games.selectGame();
+        // init menu area
+        do {
+            System.out.println("\nDigite o número da ação desejada:\n\n1. Comer\n2. Dormir\n3. Trabalhar\n4. Jogar\n5. Conferir status\n6. Sair");
+            String menuSelected = sc.nextLine();
 
-        // reduzir os status meno a carteira
-        // Status.reduxStatsPerAction(90,60,20);
+            // comparate
+            if (MetodsResources.isConvertibleToInt(menuSelected) == 1) {
+                System.out.println("\nÉ necessario escolher uma opção!\n");
+            } else if (MetodsResources.isConvertibleToInt(menuSelected) == 2) {
+                //pega a escolha do menu
+                int numberMenuSelect = Integer.parseInt(menuSelected);
 
-        // show stats - passa op name do tamagotchi
-        Status.showStatus(CatchName.getName());
+                // verifica se o player nn quer voltar
+                if (numberMenuSelect == 6) {
+                    // fechar o game
+                    menuBoleans = false;
+                } else {
+                    MetodsResources.switchMenu(numberMenuSelect);
+
+                    // redux 5 point por general action
+                    Status.reduxPerAction();
+                }
+            } else if (MetodsResources.isConvertibleToInt(menuSelected) == 3) {
+                System.out.println("\nDigite apenas numeros!\n");
+            } else {
+                System.out.println("\nOpção invalida!\n");
+            }
+        } while (menuBoleans == true);
+
+
+        System.out.println("\n\nFechando game!\n\nAdeus " + CatchName.getName() + "!\n\n");
 
         // encerra o scanner
         sc.close();

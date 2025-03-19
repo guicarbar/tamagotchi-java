@@ -75,7 +75,7 @@ public class Ursinho extends Games {
                 break;
         }
 
-        if (!Wallet.haveMoney(valueBet)) {
+        if (Wallet.haveMoney(valueBet) == true) {
             // remove o dinheiro da carteira
             Wallet.removeCash(valueBet);
 
@@ -83,18 +83,16 @@ public class Ursinho extends Games {
             inGame(MetodsResources.ramndomNumberForLuck(10));
         } else {
             // esculacho por ser falido
+            System.out.println("\nVocê não tem dinheiro e quer apostar ? Vai trabalhar!\n");
         }
     }
 
     // iniciando game
     public static void ursinhoGame() {
-        // inicializador do ursinho
-        MetodsResources.timer(5, 3);
-
         // inicando o scanner
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\nQunato deseja apostar hoje ?\n1. RS5,00\n2. RS10,oo\n3. 3. RS15,oo\n4. RS20,00\n5. Voltar\n");
+        System.out.println("\nQunato deseja apostar hoje ?\n\n1. RS5,00\n2. RS10,oo\n3. RS15,oo\n4. RS20,00\n5. Voltar");
         String valueOptions = sc.nextLine();
 
         if (MetodsResources.isConvertibleToInt(valueOptions) == 1) {
@@ -106,6 +104,7 @@ public class Ursinho extends Games {
             // verifica se o player nn quer voltar
             if (valueBet == 5) {
                 // voltar pro menu
+                System.out.println("\nVoltando para o menu de games!\n");
             } else {
                 switchBet(valueBet);
             }

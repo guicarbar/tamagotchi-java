@@ -51,9 +51,10 @@ public class Hunger extends Status {
                 break;
             default:
                 System.out.println("\nDigite apenas uma das opções disponiveis!\n");
+                break;
         }
 
-        if (!Wallet.haveMoney(price)) {
+        if (Wallet.haveMoney(price) == true) {
             // comer comida
         } else {
             System.out.println("\nVocé não tem dinheiro o suficiete! vá trabalhar!\n");
@@ -79,6 +80,7 @@ public class Hunger extends Status {
             // verifica se o player nn quer voltar
             if (optionFood2 == 7) {
                 // voltar pro menu
+                System.out.println("\nVoltando para o menu principal!\n");
             } else {
                 switchFood(optionFood2);
             }
