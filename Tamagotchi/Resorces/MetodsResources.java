@@ -1,12 +1,13 @@
 // package
 package Tamagotchi.Resorces;
 
-// static functions
-import static Tamagotchi.Modules.Status.showStatus;
+// functions
+import Tamagotchi.Modules.Status;
 import static Tamagotchi.Modules.Games.selectGame;
 import static Tamagotchi.Modules.Sleep.sleepTime;
 import static Tamagotchi.Modules.Hunger.menuSelectFood;
 import static Tamagotchi.Modules.Job.workInit;
+import static Tamagotchi.Modules.Status.*;
 
 
 // import biblioteca
@@ -60,11 +61,20 @@ public class MetodsResources {
                 break;
             case 5:
                 // conferir status
-                showStatus(CatchName.getName());
+                Status.showStatus(CatchName.getName());
                 break;
             default:
                 System.out.println("\nDigite apenas uma das opções disponiveis!\n");
                 break;
+        }
+    }
+
+    // morte
+    public static boolean analiserMorte() {
+        if (getHumor() <= 0 || getHunger() <= 0 || getSleep() <= 0) {
+            return false;
+        } else {
+            return true;
         }
     }
 }
