@@ -1,11 +1,5 @@
 package Tamagotchi.Modules;
 
-// import resources
-import Tamagotchi.Resorces.MetodsResources;
-
-// import status
-import Tamagotchi.Modules.Status;
-
 public class HappyGames{
     // console
     public static void console() {

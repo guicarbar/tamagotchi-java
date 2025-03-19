@@ -98,9 +98,9 @@ public class Status {
         sleep -= redxSleep;
     }
 
-    public static void reduxPerAction() {
-        humor -= 5;
-        hunger -= 5;
-        sleep -= 5;
+    public static void reduxPerAction(int redxHumor, int redxHunger, int redxSleep) {
+        humor -= redxHumor;
+        hunger -= redxHunger;
+        sleep -= redxSleep;
     }
 }

@@ -1,6 +1,7 @@
 package Tamagotchi.Modules;
 
 // import resorces
+import Tamagotchi.Resorces.CatchName;
 import Tamagotchi.Resorces.MetodsResources;
 import Tamagotchi.Modules.Wallet;
 
@@ -10,44 +11,56 @@ import java.util.Scanner;
 public class Ursinho extends Games {
     // compar by luck
     // azar
-    public static void azar(int sorterNumber) {
+    public static void azar(int sorterNumber, double valueBet) {
         if (0 <= sorterNumber && sorterNumber < 8 ) {
             // perde
+            System.out.println("\nSua sorte não está boa hoje, você perdeu! Mas não desista, vamos lá, joga denovo no Ursinho!\n");
         } else {
             // ganha
+            System.out.println("\nParabens! Voc^ganhou: RS" + (valueBet * 3) + "!\n");
+            valueBet = valueBet * 3;
+            Wallet.addCash(valueBet);
         }
     }
 
     // neutro
-    public static void neutro(int sorterNumber) {
+    public static void neutro(int sorterNumber, double valueBet) {
         if (0 <= sorterNumber && sorterNumber <= 5 ) {
             // perde
+            System.out.println("\nSua sorte não está boa hoje, você perdeu! Mas não desista, vamos lá, joga denovo no Ursinho!\n");
         } else {
             // ganha
+            System.out.println("\nParabens! Voc^ganhou: RS" + (valueBet * 3) + "!\n");
+            valueBet = valueBet * 3;
+            Wallet.addCash(valueBet);
         }
     }
 
     // sorte
-    public static void sorte(int sorterNumber) {
+    public static void sorte(int sorterNumber, double valueBet) {
         if (0 <= sorterNumber && sorterNumber < 4 ) {
             // perde
+            System.out.println("\nSua sorte não está boa hoje, você perdeu! Mas não desista, vamos lá, joga denovo no Ursinho!\n");
         } else {
             // ganha
+            System.out.println("\nParabens! Voc^ganhou: RS" + (valueBet * 3) + "!\n");
+            valueBet = valueBet * 3;
+            Wallet.addCash(valueBet);
         }
     }
 
 
     // in game tigriinho
-    public static void inGame(int sorterNumber) {
+    public static void inGame(int sorterNumber, double valueBet) {
         if (luck == 0) {
             // azar
-            azar(sorterNumber);
+            azar(sorterNumber, valueBet);
         } else if (luck == 1) {
             // neutro
-            neutro(sorterNumber);
+            neutro(sorterNumber, valueBet);
         } else {
             // sorte
-            sorte(sorterNumber);
+            sorte(sorterNumber, valueBet);
         }
     }
 
@@ -80,7 +93,7 @@ public class Ursinho extends Games {
             Wallet.removeCash(valueBet);
 
             // jogar no tigrinho
-            inGame(MetodsResources.ramndomNumberForLuck(10));
+            inGame(MetodsResources.ramndomNumberForLuck(10), valueBet);
         } else {
             // esculacho por ser falido
             System.out.println("\nVocê não tem dinheiro e quer apostar ? Vai trabalhar!\n");

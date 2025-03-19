@@ -1,20 +1,17 @@
+// package
 package Tamagotchi.Resorces;
 
-// import static resorces
-import Tamagotchi.Modules.HappyGames;
-
+// static functions
 import static Tamagotchi.Modules.Status.showStatus;
 import static Tamagotchi.Modules.Games.selectGame;
 import static Tamagotchi.Modules.Sleep.sleepTime;
-import static Tamagotchi.Modules.Hunger.menuSelect;
+import static Tamagotchi.Modules.Hunger.menuSelectFood;
 import static Tamagotchi.Modules.Job.workInit;
 
 
 // import biblioteca
 import java.util.Random;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+
 
 public class MetodsResources {
     // teste para converter para numeros
@@ -41,23 +38,13 @@ public class MetodsResources {
         return numberReturn;
     }
 
-    // alterar a sorte
-    public static int alterLuck() {
-        // start random
-        Random random = new Random();
-
-        // var for luck and return
-        int luck = random.nextInt(3);
-        return luck;
-    }
-
 
     // switch do menu principal
     public static void switchMenu(int menuItem) {
         switch (menuItem) {
             case 1:
                 // comer
-                menuSelect();
+                menuSelectFood();
                 break;
             case 2:
                 // dormir

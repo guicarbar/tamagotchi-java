@@ -7,7 +7,6 @@ import Tamagotchi.Resorces.MetodsResources;
 
 // imports modules
 import Tamagotchi.Modules.Status;
-import Tamagotchi.Modules.Games;
 
 
 // main function
@@ -38,9 +37,9 @@ public class Main {
         System.out.println("\nTamagotchi abrindo!");
 
         // settando vars iniciais do tamagotchi
-        Status.setHumor(60);
-        Status.setHunger(60);
-        Status.setSleep(60);
+        Status.setHumor(70);
+        Status.setHunger(70);
+        Status.setSleep(70);
         Status.setWallet(40);
 
 
@@ -64,10 +63,11 @@ public class Main {
                     // fechar o game
                     menuBoleans = false;
                 } else {
-                    MetodsResources.switchMenu(numberMenuSelect);
-
                     // redux 5 point por general action
-                    Status.reduxPerAction();
+                    Status.reduxPerAction(5, 5, 5);
+
+                    // init swicht
+                    MetodsResources.switchMenu(numberMenuSelect);
                 }
             } else if (MetodsResources.isConvertibleToInt(menuSelected) == 3) {
                 System.out.println("\nDigite apenas numeros!\n");

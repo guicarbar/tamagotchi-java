@@ -2,52 +2,50 @@ package Tamagotchi.Modules;
 
 // import resources
 import Tamagotchi.Resorces.MetodsResources;
+import Tamagotchi.Modules.Wallet;
 
 // import bibbliotecas
 import java.util.Scanner;
 
 public class Hunger extends Status {
-    public static void addHunger(int hungerPoints) {
-        hunger += hungerPoints;
-    }
-
-    public static void removeHunger(int hungerPoints) {
-        hunger -= hungerPoints;
-    }
-
-    public static void analyserHunger(String name) {
-        if (hunger > 100) {
-            hunger = 100;
-            System.out.println("\n" + name + " já se sente cheio, ele não precisa comer mais por um tempo!\n");
-        } else if (hunger <= 0) {
-            System.out.println("\n" + name + " morreude fome!\n");
-        }
-    }
-
     // switch da comida
     public static void switchFood(int optionSelected) {
         // set value
         double price = 0.0;
+        int varHumor = 0;
+        int varHunger = 0;
 
         // switch da escolha
         switch (optionSelected) {
             case 1:
                 price = 12.00;
+                varHunger = 30;
+                varHumor = 10;
                 break;
             case 2:
                 price = 8.00;
+                varHunger = 15;
+                varHumor = 15;
                 break;
             case 3:
                 price = 15.00;
+                varHunger = 25;
+                varHumor = 10;
                 break;
             case 4:
                 price = 25.00;
+                varHunger = 40;
+                varHumor = 25;
                 break;
             case 5:
                 price = 5.00;
+                varHunger = 5;
+                varHumor = 15;
                 break;
             case 6:
                 price = 7.00;
+                varHunger = 10;
+                varHumor = 25;
                 break;
             default:
                 System.out.println("\nDigite apenas uma das opções disponiveis!\n");
@@ -56,13 +54,17 @@ public class Hunger extends Status {
 
         if (Wallet.haveMoney(price) == true) {
             // comer comida
+            Wallet.removeCash(price);
+            humor += varHumor;
+            hunger += varHunger;
+            System.out.println("\nUhuuum que incrivel!");
         } else {
             System.out.println("\nVocé não tem dinheiro o suficiete! vá trabalhar!\n");
         }
     };
 
     // seleciona a comida
-    public static void menuSelect() {
+    public static void menuSelectFood() {
         // start scanner
         Scanner sc = new Scanner(System.in);
 

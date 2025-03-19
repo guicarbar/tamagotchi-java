@@ -7,37 +7,23 @@ import java.util.Scanner;
 import Tamagotchi.Resorces.MetodsResources;
 
 public class Sleep extends Status {
-    // add poins of sleep
-    public static void addSleep(int sleepPoints) {
-        sleep += sleepPoints;
-    }
-
-    // remove poins sleep
-    public static void removeSleep(int sleepPoints) {
-        sleep -= sleepPoints;
-    }
-
-    // analyser sleep points
-    public static void analyserSleep(String name) {
-        if (sleep > 100) {
-            sleep = 100;
-            System.out.println("\n" + name + " náo precisa mais dormir!\n");
-        } else if (sleep <= 0) {
-            System.out.println("\n" + name + " morreude sono!\n");
-        }
-    }
-
     // swich slepp
     public static void switchSleep(int sleepTime) {
         switch (sleepTime) {
             case 1:
                 // cochilo
+                sleep += 30;
+                hunger -= 20;
                 break;
             case 2:
                 // sono mormal
+                sleep += 60;
+                hunger -= 45;
                 break;
             case 3:
                 // sono longo
+                sleep += 90;
+                hunger += 65;
                 break;
             default:
                 System.out.println("\nDigite apenas uma das opções disponiveis!\n");
