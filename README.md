@@ -3,9 +3,9 @@
 </p>
 
 
-# todolist-wepage-v2
+# tamagotchi-java
 
-> Este projeto foi desenvolvido em Java e representa uma versão mais adulta de um Tamagotchi 🐾, um amigo virtual que precisa realizar diversas atividades para se manter saudável e funcional.
+> Este projeto foi desenvolvido em Java e representa uma versão mais adulta de um Tamagotchi, um amigo virtual que precisa realizar diversas atividades para se manter saudável e funcional.
 
 O Tamagotchi pode:
 - Se alimentar.
